@@ -1,0 +1,24 @@
+From fe5eb0c765b2b48b8c1c86834b1065e07a11586d Mon Sep 17 00:00:00 2001
+From: Scott K Logan <logans@cottsay.net>
+Date: Fri, 22 Mar 2024 20:42:47 -0500
+Subject: [PATCH] Install the package.xml manifest
+
+---
+ rpm/ros-rolling-urdfdom-headers.spec | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/rpm/ros-rolling-urdfdom-headers.spec b/rpm/ros-rolling-urdfdom-headers.spec
+index 2990e4f40718..235295698516 100644
+--- a/rpm/ros-rolling-urdfdom-headers.spec
++++ b/rpm/ros-rolling-urdfdom-headers.spec
+@@ -63,6 +63,7 @@ C++ headers for URDF.
+ 
+ %install
+ %cmake_install
++install -m0644 -p -D package.xml %{buildroot}%{bloom_prefix}/share/%{pkg_name}/package.xml
+ 
+ 
+ %if 0%{?with_tests}
+-- 
+2.44.0
+
